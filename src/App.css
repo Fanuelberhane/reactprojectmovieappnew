@@ -1,0 +1,157 @@
+/* App.css */
+
+.app-container {
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  min-height: 100vh;
+  margin: 0;
+  position: relative;
+  font-family: Arial, sans-serif;
+  color: #fff;
+  text-align: center;
+  z-index: 1; /* Ensures content appears above the background */
+}
+
+/* Background Image with Transparency */
+.app-container::before {
+  content: "";
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  background: url('src/Kerfin7-NEA-2191.jpg') no-repeat center center/cover;
+  background-size: cover;
+  opacity: 0.9; /* Adjust this value for transparency */
+  z-index: -1; /* Places it behind the content */
+}
+
+
+.content {
+  position: relative;
+  z-index: 1; /* Ensures content is above the overlay */
+  padding: 20px;
+  text-align: center;
+}
+
+h1 {
+  text-align: center;
+  margin: 20px 0;
+  font-size: 2.5rem;
+  color: #ffffff; /* Orange title color */
+}
+
+.search-bar {
+  display: flex;
+  justify-content: center; /* Centers horizontally */
+  align-items: center; /* Aligns items vertically */
+  width: 100%;
+  max-width: 500px; /* Limits max width */
+  padding: 10px;
+}
+
+.search-bar input {
+  flex: 1; /* Makes input take full width of the container */
+  padding: 10px 15px;
+  border-radius: 50px;
+  border: none;
+  outline: none;
+  font-size: 1rem;
+  width: 100%; /* Ensures it fits inside the container */
+}
+
+.search-bar .btn {
+  margin-left: 10px;
+  padding: 10px 20px;
+  border-radius: 50px;
+  border: none;
+  cursor: pointer;
+  background-color: #ffffff; /* Orange button */
+  color: #000000;
+  font-size: 1rem;
+}
+
+.search-bar .btn:hover {
+  background-color: #fb9700; /* Darker shade on hover */
+}
+
+.search-bar .btn {
+  border-radius: 50px;
+}
+
+/* Movie List Container - Grid Layout */
+.movie-list-container {
+  display: grid;
+  grid-template-columns: repeat(4, 1fr); /* 4 cards in a row */
+  gap: 20px; /* Spacing between cards */
+  padding: 20px;
+}
+
+@media (max-width: 1200px) {
+  .movie-list-container {
+    grid-template-columns: repeat(3, 1fr); /* 3 cards for medium screens */
+  }
+}
+
+@media (max-width: 768px) {
+  .movie-list-container {
+    grid-template-columns: repeat(2, 1fr); /* 2 cards for smaller screens */
+  }
+}
+
+@media (max-width: 480px) {
+  .movie-list-container {
+    grid-template-columns: 1fr; /* 1 card for very small screens */
+  }
+}
+
+/* Movie Card */
+.card {
+  background-color: #f5f5f5; /* Off-White Background */
+  color: #2c3e50; /* Dark Teal Text */
+  border: none;
+  box-shadow: 0 4px 8px rgba(0, 0, 0, 0.2); /* Subtle Shadow */
+  border-radius: 10px;
+  transition: transform 0.3s ease-in-out;
+}
+
+.card:hover {
+  transform: scale(1.05);
+}
+
+.card img {
+  width: 100%;
+  height: 300px; /* Reduced height for elegance */
+  object-fit: cover;
+  border-radius: 10px 10px 0 0;
+}
+
+.card-body {
+  padding: 10px;
+  text-align: center;
+}
+
+.card-title {
+  font-size: 1.1rem;
+  font-weight: bold;
+  color: #22303c; /* Soft Navy for Titles */
+}
+
+.card-text {
+  font-size: 0.9rem;
+  color: #2c3e50; /* Dark Teal */
+}
+
+.btn-primary {
+  background-color: #ff9800; /* Orange Accent */
+  border-color: #ff9800;
+  color: #fff;
+  transition: background-color 0.3s ease-in-out;
+}
+
+.btn-primary:hover {
+  background-color: #e68900; /* Darker Orange */
+  border-color: #e68900;
+}
